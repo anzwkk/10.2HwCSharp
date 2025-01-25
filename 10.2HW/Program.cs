@@ -3,19 +3,28 @@ using System.Text;
 
 StringBuilder report = new StringBuilder();
 
+string title;
+string dateInput;
+string eventInput;
+
 Console.WriteLine("Введіть заголовок звіту:");
-string title = Console.ReadLine();
+title = Console.ReadLine();
+report.AppendLine(title);
 
 Console.WriteLine("Введіть дату звіту: ");
-string dateInput = Console.ReadLine();
+dateInput = Console.ReadLine();
+report.AppendLine($"Дата створення: {dateInput}");
 
 while (true)
 {
     Console.WriteLine("Введіть події: ");
-    string eventInput = Console.ReadLine();
+    eventInput = Console.ReadLine();
 
-    if (string.IsNullOrEmpty(eventInput));
+    if (string.IsNullOrEmpty(eventInput))
     {
         break;
     }
+    report.AppendLine(eventInput);
 }
+
+Console.WriteLine($"Ваш звіт: {report} ");
